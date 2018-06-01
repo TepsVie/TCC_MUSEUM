@@ -1,0 +1,8 @@
+{
+  "name": "TCC_MUSEUM",
+  "app_id": "9f0eb091",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
