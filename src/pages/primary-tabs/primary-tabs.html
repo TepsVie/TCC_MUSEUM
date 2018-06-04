@@ -1,0 +1,15 @@
+<div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
+    <div class="flb">
+        <div class="Aligner-item Aligner-item--top"></div>
+        <div>
+            <img src="../../../resources/splash.png">
+        </div>
+        <div class="Aligner-item Aligner-item--bottom"></div>
+    </div>
+</div>
+
+<ion-tabs>
+    <ion-tab [root]="homeRoot" tabIcon="home"></ion-tab>
+    <ion-tab [root]="scanRoot" tabIcon="qr-scanner"></ion-tab>
+    <ion-tab [root]="infoRoot" tabIcon="information-circle"></ion-tab>
+</ion-tabs>

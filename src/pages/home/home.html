@@ -1,14 +1,35 @@
+<div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
+    <div class="flb">
+      <div class="Aligner-item Aligner-item--top"></div>
+      <h1>Bienvenue</h1><br/>
+      <h1>TCC Museum</h1>
+      <div class="Aligner-item Aligner-item--bottom"></div>
+    </div>
+  </div>
+
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+    <ion-title class="Titre">Liste des oeuvres</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-card-header > Oeuvres vues : {{oeuvresVu}} / {{totalOeuvres}} </ion-card-header>
+  <ion-scroll scrollY="true" style="height:100%">
+    <p *ngFor="let info of oeuvresInfo">
+      <ion-card class="oeuvre">
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="../../assets/imgs/oeuvres/{{info.qr_code}}.jpg" />
+          </ion-avatar>
+          <ion-icon name={{info.statut}} item-end style="text-align: end"></ion-icon>
+          {{info.nom}}
+          <br/> {{info.prenom}}
+          <br/><b>Code: </b>{{info.qr_code}}
+        </ion-item>
+
+      </ion-card>
+    </p>
+  </ion-scroll>
+
 </ion-content>
